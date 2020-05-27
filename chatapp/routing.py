@@ -14,7 +14,7 @@ application = ProtocolTypeRouter({
             URLRouter(
                 [
                     url(
-                        "messages-tcp/(?P<employee_jwt_token>[^/ ]+)", ChatConsumer),
+                        "chat-api", ChatConsumer),
                 ]
             )
         )

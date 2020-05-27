@@ -10,4 +10,5 @@ urlpatterns = [
 
     # APIs
     path('signup_api/', views.signup_api.as_view(), name="signup_api"),
+    path('login_api/', views.login_api.as_view(), name="login_api"),
 ]

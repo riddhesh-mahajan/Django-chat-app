@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body style="padding:0px;margin:0px;">
+
+    <img src="{% static 'accounts/images/signup_page_background.svg' %}" alt="">
+
+    <div class="d-flex flex-column" style="min-width:100%;min-height:100%;position: fixed;top:0px;">
+
+        <div class="d-flex align-items-center justify-content-center pt-5 pb-5">
+            <img src="{% static 'accounts/images/app_logo.svg' %}" alt="" style="height:60px;width:60px;" class="mr-3">
+            <h1 class="text-light text-center" style="font-size: 64px;">Chat App</h1>
+        </div>
+
+
+        <div class="d-flex align-items-center justify-content-center">
+
+            <div class="col-4 bg-white shadow p-4" style="border-radius: 32px;">
+
+                <h1 class="text-secondary text-center mb-4">Login</h1>
+
+                <input type="email" id="email" placeholder="Email" class="form-control form-control-lg mb-2"
+                    style="border-radius: 48px;">
+                <input type="text" id="password" placeholder="Password" class="form-control form-control-lg mb-3"
+                    style="border-radius: 48px;">
+
+                <button id="login_btn" class="btn btn-primary col-12 mb-3" style="border-radius: 100px;">login</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Jquery, Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- Constants -->
+    <script>
+        const login_api_url = "{{login_api_url}}";
+        const chat_page_url = "{{chat_page_url}}";
+    </script>
+
+    <!-- JS -->
+    <script src="{% static 'accounts/js/login.js' %}"></script>
+</body>
+
+</html>

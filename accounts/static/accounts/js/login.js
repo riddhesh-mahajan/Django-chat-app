@@ -1,10 +1,8 @@
-$('#signup_btn').click(() => {
+$('#login_btn').click(() => {
     $.ajax({
-        url: signup_api_url,
+        url: login_api_url,
         type: 'POST',
         data: {
-            first_name: $('#first_name').val(),
-            last_name: $('#last_name').val(),
             email: $('#email').val(),
             password: $('#password').val(),
         },
@@ -14,15 +12,16 @@ $('#signup_btn').click(() => {
             if (json.error_flag !== undefined && json.error_flag === 0) {
                 // Process msg and data
                 switch (json.msg) {
-                    case 'account created successfully':
-
+                    case 'log in successful':
+                        Cookies.set('email', $('#email').val())
+                        window.open(chat_page_url, '_self');
                         break;
                     default:
                 }
             } else {
                 // Error occured
                 switch (json.error) {
-                    case 'account already exist':
+                    case 'login failed':
 
                         break;
 

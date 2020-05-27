@@ -6,3 +6,8 @@ class signup_form(forms.Form):
     last_name = forms.CharField()
     email = forms.CharField()
     password = forms.CharField()
+
+
+class login_form(forms.Form):
+    email = forms.CharField()
+    password = forms.CharField()
