@@ -5,16 +5,21 @@ setup_websocket();
 
 function append_chat_card_in_chat_holder(msg, email) {
     let ml_auto_css_class = '';
+    let background_color = '#ffffff';
+    let text_color = '#000000';
+
     if (email === Cookies.get('email')) {
         ml_auto_css_class = 'ml-auto';
+        background_color = '#2196F3';
+        text_color = '#ffffff';
     }
 
     chat_holder_div.append(`
     <div class="d-flex mt-3">
-        <div class="d-flex flex-column br1 shadow-sm border p-2 pr-3 pl-3 ${ml_auto_css_class}"
-            style="min-width:30%;max-width:70%;">
+        <div class="d-flex flex-column p-2 pr-3 pl-3 ${ml_auto_css_class} border"
+            style="min-width:30%;max-width:70%;border-radius: 200px;background-color:${background_color};">
 
-            <p class="f4 mb-0">${msg}</p>
+            <p class="f4 mb-0" style="color:${text_color};">${msg}</p>
         </div>
     </div>
   `);
@@ -39,13 +44,12 @@ function setup_websocket() {
         if (email !== Cookies.get('email')) {
             append_chat_card_in_chat_holder(msg, email);
         }
+
+        console.log(response)
     };
 
     // On socket open
     socket.onopen = (e) => {
-        window.setTimeout(() => {
-            send_meesage('Hello')
-        }, 5000);
     };
 
     // On error

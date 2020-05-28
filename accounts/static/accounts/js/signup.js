@@ -15,7 +15,7 @@ $('#signup_btn').click(() => {
                 // Process msg and data
                 switch (json.msg) {
                     case 'account created successfully':
-
+                        window.open('/login', '_self');
                         break;
                     default:
                 }

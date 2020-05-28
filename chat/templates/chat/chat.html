@@ -15,15 +15,23 @@
 </head>
 
 <body>
-    <div style="min-width:100%; min-height:100vh;" class="d-flex flex-column bg-warning">
-        <h1 class="p-3">Chat</h1>
+    <div style="min-width:100%; min-height:100vh;" class="d-flex flex-column">
+        <div class="col-12 bg-light shadow-sm">
+            <h4 class="p-2">Chat</h4>
+        </div>
 
-        <div id="chat_holder" class="flex-fill bg-dark">
+
+        <div id="chat_holder" class="flex-fill pl-3 pr-3">
 
         </div>
 
-        <input type="text" id="chat_input" placeholder="Enter your msg here" class="form-control form-control-lg">
-        <button id="send_btn" class="btn btn-primary btn-lg">Send</button>
+        <div class="d-flex align-items-center p-3">
+            <input type="text" id="chat_input" placeholder="Enter your msg here"
+                class="form-control form-control-lg mr-3">
+            <img id="send_btn" src="{% static 'chat/images/send_btn.svg' %}" alt=""
+                style="cursor: pointer;height:40px; width:40px;">
+        </div>
+
     </div>
 
 
